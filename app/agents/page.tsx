@@ -15,7 +15,7 @@ export default function AgentsPage() {
       <header>
         <h1>Агенты Valorant</h1>    
         <nav>
-          <Link href="/">ГлавнаяАА</Link>
+          <Link href="/">Главная</Link>
           <Link href="/skins">Скины</Link>
           <Link href="/agents">Агенты</Link>
         </nav>
