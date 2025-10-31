@@ -1,0 +1,33 @@
+/* Общий контейнер */
+.action-container {
+  text-align: center;
+  margin-top: 100px;
+  font-family: Arial, sans-serif;
+}
+
+/* Заголовок */
+.action-container h1 {
+  color: #111;
+}
+
+/* Кнопка */
+.commit-button {
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.commit-button:hover {
+  background-color: #0055b3;
+}
+
+/* Текст статуса */
+.status-text {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+}
