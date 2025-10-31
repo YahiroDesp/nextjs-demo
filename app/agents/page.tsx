@@ -15,28 +15,29 @@ export default function AgentsPage() {
       <header>
         <h1>Агенты Valorant</h1>    
         <nav>
-          <Link href="/">Главная</Link>
+          <Link href="/">ГлавнаяАА</Link>
           <Link href="/skins">Скины</Link>
           <Link href="/agents">Агенты</Link>
         </nav>
       </header>
-      <div className="container">
-        <div className="cards">
-          {agents.map((agent) => (
-            <div key={agent.name} className="card">
-              <img src={agent.image} alt={agent.name} />
-              <h3>{agent.name}</h3>
-              <p>Роль: {agent.role}</p>
-              <p>Способности:</p>
-              <ul style={{ paddingLeft: '20px', textAlign: 'left', fontSize: '0.9rem' }}>
-                {agent.abilities.map((ability) => (
-                  <li key={ability}>{ability}</li>
-                ))}
-              </ul>
-            </div>
+     <div className="container">
+  <div className="agents-cards">
+    {agents.map((agent) => (
+      <div key={agent.name} className="agent-card">
+        <img src={agent.image} alt={agent.name} />
+        <h3>{agent.name}</h3>
+        <p>Роль: {agent.role}</p>
+        <p>Способности:</p>
+        <ul>
+          {agent.abilities.map((ability) => (
+            <li key={ability}>{ability}</li>
           ))}
-        </div>
+        </ul>
       </div>
+    ))}
+  </div>
+</div>
+
     </>
   );
 }

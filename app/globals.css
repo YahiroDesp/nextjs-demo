@@ -1,25 +1,6 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-/* Базовые стили */
+/* ===== Базовые стили ===== */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #0e0e10;
@@ -28,11 +9,12 @@ body {
   padding: 0;
 }
 
-/* Хедер */
+/* ===== Хедер ===== */
 header {
   background: linear-gradient(90deg, #ff4655, #ff8a00);
   padding: 20px;
   text-align: center;
+  margin-bottom: 40px; /* добавляем пространство под хэдером */
 }
 
 header h1 {
@@ -54,162 +36,139 @@ nav a:hover {
   color: #ffd700;
 }
 
-/* Контейнер страниц */
+/* ===== Контейнер ===== */
 .container {
-  padding: 30px;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Сетка карточек */
-.cards {
+/* ===== Карточки агентов ===== */
+.agents-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
 }
 
-/* Карточки скинов и агентов */
-.card {
-  background: #1f1f23;
-  border-radius: 12px;
+.agent-card {
+  background-color: #1f1f23;
   width: 220px;
-  text-align: center;
   padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-  border: 2px solid transparent;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(255, 70, 85, 0.6);
-  border: 2px solid #ff4655;
+.agent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 70, 85, 0.4);
 }
 
-
-img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
+.agent-card img {
+  width: 180px;          /* фиксированная ширина */
+  height: 180px;         /* фиксированная высота */
+  object-fit: cover;     /* обрезает лишнее и сохраняет центр изображения */
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;    /* делает фото круглым */
 }
 
-
-h3 {
+.agent-card h3 {
   margin: 10px 0 5px;
   font-size: 1.2rem;
   color: #ff4655;
 }
 
-p {
+.agent-card p {
   margin: 0;
   font-size: 1rem;
   color: #ddd;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center; 
+.agent-card ul {
+  padding-left: 20px;
+  text-align: left;
+  font-size: 0.9rem;
 }
 
-.card {
-  background: #1f1f23;
-  border-radius: 12px;
-  width: 220px;
-  text-align: center;
-  padding: 15px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
-.card img {
-  width: 220px;       /* фиксированная ширина */
-  height: auto;       /* высота подстраивается под пропорции */
-  display: block;
-  margin: 0 auto 10px auto;
-  border-radius: 10px;
-}
-
-/* ===== Оружие ===== */
-.weapons-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.weapon-card {
-  background: #1f1f23;
-  border-radius: 12px;
-  width: 200px;
-  text-align: center;
-  padding: 15px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.weapon-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(255, 70, 85, 0.4);
-}
-
-.back-button {
-  margin-bottom: 20px;
-  padding: 10px 20px;
-  cursor: pointer;
-  background-color: #ff4655;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-}
-
-/* ===== Скины ===== */
+/* ===== Карточки оружия и скинов ===== */
+.weapons-cards,
 .skins-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
-  margin-top: 20px;
+  gap: 20px;
 }
 
+.weapon-card,
 .skin-card {
-  background: #1f1f23;
-  border-radius: 12px;
+  background: #2b2b2f;
   width: 220px;
-  text-align: center;
   padding: 15px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 12px;
+  text-align: center;
   cursor: pointer;
-  border: 2px solid transparent;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.weapon-card:hover,
 .skin-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(255, 70, 85, 0.4);
+  box-shadow: 0 5px 15px rgba(0, 128, 255, 0.4);
 }
 
+.weapon-card img,
 .skin-card img {
   width: 200px;
-  height: auto; /* сохраняем пропорции */
-  display: block;
-  margin: 0 auto 10px auto;
+  height: auto;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 
+.weapon-card h3,
+.skin-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #00bfff;
+}
+
+.weapon-card p,
+.skin-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* ===== Кнопки ===== */
+.back-button,
+.home-btn {
+  padding: 15px 30px;
+  background-color: #ff4655;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.back-button:hover,
+.home-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 70, 85, 0.5);
+}
+
+/* ===== Главная страница ===== */
 .home-container {
   text-align: center;
   padding: 50px 20px;
-  color: #fff;
 }
 
 .home-container h1 {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: #ffffff;
 }
 
 .home-container p {
@@ -223,36 +182,9 @@ p {
   gap: 20px;
   margin-bottom: 40px;
 }
-
-.home-btn {
-  padding: 15px 30px;
-  background-color: #1f1f23;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.home-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(255, 70, 85, 0.5);
-}
-
 .home-banner img {
   max-width: 100%;
   height: auto;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-}
-
-.home-container header {
-  margin-bottom: 40px; /* добавляем пространство между header и кнопками */
-}
-
-.home-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 40px; /* пространство под кнопками */
 }
